@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="dnd.css">
+    <title>template3</title>
+</head>
+<body>
+     <head>
+        <h1>D&D Character Creator</h1>
+     </head>
+     <main>
+        <form action="">
+            <label for="class">What is your class</label>
+            <select name="class" id="class">
+                <option value="Artificer">Artificer</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Bard">Bard</option>
+                <option value="Blood Hunter">Blood Hunter</option>
+                <option value="Cleric">Cleric</option>
+                <option value="Druid">Druid</option>
+                <option value="Fighter">Fighter</option>
+                <option value="Monk">Monk</option>
+                <option value="Mystic">Mystic</option>
+                <option value="Paladin">Paladin</option>
+                <option value="Ranger">Ranger</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Sorcerer">Sorcerer</option>
+                <option value="Warlock">Warlock</option>
+                <option value="Wizard">Wizard</option>
+            </select>
+            <label for="health">roll for Health</label>
+            <p>Be wise, You only get 1 reroll</p>
+            <input onclick="healthRoll()" type="button" id="hButton">
+            <p id="roll"></p>
+            <p>SYSTEM</p>
+            <input onclick="systemRolls()" type="button" id="strbutton">
+            <p id="str"></p>
+            <p>strength</p>
+            <select onclick="myFunction0" id="rec_mode1">        
+            </select>
+            <p>dexterity</p>
+            <select onclick="myFunction1" id="rec_mode2">        
+            </select>
+            <p>constitution</p>
+            <select onclick="myFunction2" id="rec_mode3">        
+            </select>
+            <p>intelligence</p>
+            <select onclick="myFunction3" id="rec_mode4">        
+            </select>
+            <p>wisdom</p> 
+            <select onclick="myFunction4" id="rec_mode5">        
+            </select>
+            <p>charisma</p>
+            <select onclick="myFunction5" id="rec_mode6">        
+            </select>
+        </form>
+        <script>
+            function healthRoll() {
+                let x = Math.floor((Math.random() * 12) + 1);
+                document.getElementById("roll").innerHTML = x;
+
+                var y = document.getElementById("hButton");
+                    if (y.style.display === "none") {
+                    y.style.display = "block";
+                    } else {
+                    y.style.display = "none";
+                }
+            }
+        </script>
+        <script>
+            function systemRolls() {
+                const mstr = [];
+                for (let i = 0; i < 6; i++) {
+                    const substr = [];
+                    for (let i = 0; i < 4; i++) {
+                        let a = Math.floor((Math.random() * 6) + 1);
+                        substr.push(a);
+                    }
+                    let c = Math.min(...substr);
+                    const index = substr.indexOf(c);
+                    if (index > -1) {
+                       substr.splice(index, 1);
+                    }
+                    e = substr.reduce((a, b) => a + b);
+                    mstr.push(e);
+                }
+                document.getElementById("str").innerHTML = mstr;
+
+                var d = document.getElementById("strbutton");
+                    if (d.style.display === "none") {
+                    d.style.display = "block";
+                    } else {
+                    d.style.display = "none";
+                }
+                var myobject1 = {
+                    ValueA : mstr[0],
+                    ValueB : mstr[1],
+                    ValueC : mstr[2],
+                    ValueD : mstr[3],
+                    ValueE : mstr[4],
+                    ValueF : mstr[5]
+                };
+                var select = document.getElementById("rec_mode1");
+                for(index in myobject1) {
+                    select.options[select.options.length] = new Option(myobject1[index], index);
+                }
+
+                function myFunction1() {
+                    var x = document.getElementById("rec_mode1").options[0].disabled = true;
+                }
+
+                var myobject2 = {
+                    ValueA : mstr[0],
+                    ValueB : mstr[1],
+                    ValueC : mstr[2],
+                    ValueD : mstr[3],
+                    ValueE : mstr[4],
+                    ValueF : mstr[5]
+                };
+                var select = document.getElementById("rec_mode2");
+                for(index in myobject2) {
+                    select.options[select.options.length] = new Option(myobject2[index], index);
+                }
+
+                function myFunction2() {
+                    var x = document.getElementById("rec_mode2").options[0].disabled = true;
+                }
+
+                var myobject3 = {
+                    ValueA : mstr[0],
+                    ValueB : mstr[1],
+                    ValueC : mstr[2],
+                    ValueD : mstr[3],
+                    ValueE : mstr[4],
+                    ValueF : mstr[5]
+                };
+                var select = document.getElementById("rec_mode3");
+                for(index in myobject3) {
+                    select.options[select.options.length] = new Option(myobject3[index], index);
+                }
+
+                function myFunction3() {
+                    var x = document.getElementById("rec_mode3").options[3].disabled = true;
+                }
+
+                var myobject4 = {
+                    ValueA : mstr[0],
+                    ValueB : mstr[1],
+                    ValueC : mstr[2],
+                    ValueD : mstr[3],
+                    ValueE : mstr[4],
+                    ValueF : mstr[5]
+                };
+                var select = document.getElementById("rec_mode4");
+                for(index in myobject4) {
+                    select.options[select.options.length] = new Option(myobject4[index], index);
+                }
+
+                function myFunction4() {
+                    var x = document.getElementById("rec_mode4").options[4].disabled = true;
+                }
+
+                var myobject5 = {
+                    ValueA : mstr[0],
+                    ValueB : mstr[1],
+                    ValueC : mstr[2],
+                    ValueD : mstr[3],
+                    ValueE : mstr[4],
+                    ValueF : mstr[5]
+                };
+                var select = document.getElementById("rec_mode5");
+                for(index in myobject5) {
+                    select.options[select.options.length] = new Option(myobject5[index], index);
+                }
+
+                function myFunction5() {
+                    var x = document.getElementById("rec_mode5").options[5].disabled = true;
+                }
+
+                var myobject6 = {
+                    ValueA : mstr[0],
+                    ValueB : mstr[1],
+                    ValueC : mstr[2],
+                    ValueD : mstr[3],
+                    ValueE : mstr[4],
+                    ValueF : mstr[5]
+                };
+                var select = document.getElementById("rec_mode6");
+                for(index in myobject6) {
+                    select.options[select.options.length] = new Option(myobject6[index], index);
+                }
+            }
+        </script>
+     </main>
+</body>
+</html>
