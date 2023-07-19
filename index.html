@@ -35,7 +35,7 @@
             <div class="health">
                 <label for="health">Roll for Health</label><br>
                 <input onclick="healthRoll()" type="button" id="hButton">
-                <p id="roll"></p>
+                <textarea id="roll"></textarea>
             </div>
             <div class="systemroll">
                 <label for="health">Roll for System</label><br>
@@ -43,7 +43,7 @@
                 <p id="mstr"></p>
             </div>
             <div id="master">
-                <p id="mstr0"></p>
+                <textarea id="mstr0"></textarea>
                 <select name="system" id="ss0">
                     <option value="Strength">Strength</option>
                     <option value="Dexterity">Dexterity</option>
@@ -54,7 +54,7 @@
                 </select>
             </div>
             <div id="master">
-                <p id="mstr1"></p>
+                <textarea id="mstr1"></textarea>
                 <select name="system" id="ss1">
                     <option value="Dexterity">Dexterity</option>
                     <option value="Constitution">Constitution</option>
@@ -65,7 +65,7 @@
                 </select>
             </div>
             <div id="master">
-                <p id="mstr2"></p>
+                <textarea id="mstr2"></textarea>
                 <select name="system" id="ss2">
                     <option value="Constitution">Constitution</option>
                     <option value="Intelligence">Intelligence</option>
@@ -76,7 +76,7 @@
                 </select>
             </div>
             <div id="master">
-                <p id="mstr3"></p>
+                <textarea id="mstr3"></textarea>
                 <select name="system" id="ss3">
                     <option value="Intelligence">Intelligence</option>
                     <option value="Wisdom">Wisdom</option>
@@ -87,7 +87,7 @@
                 </select>
             </div>
             <div id="master">
-                <p id="mstr4"></p>
+                <textarea id="mstr4"></textarea>
                 <select name="system" id="ss4">
                     <option value="Wisdom">Wisdom</option>
                     <option value="Charisma">Charisma</option>
@@ -98,7 +98,7 @@
                 </select>
             </div>
             <div id="master">
-                <p id="mstr5"></p>
+                <textarea id="mstr5"></textarea>
                 <select name="system" id="ss5">
                     <option value="Charisma">Charisma</option>
                     <option value="Strength">Strength</option>
@@ -190,7 +190,12 @@
 
               const Classes = document.getElementById('classes');
               const Health = document.getElementById('roll');
-              const value0 = document.getElementById('mstr0');
+              const roll0 = document.getElementById('mstr0');              
+              const roll1 = document.getElementById('mstr1');
+              const roll2= document.getElementById('mstr2');              
+              const roll3 = document.getElementById('mstr3');                         
+              const roll4 = document.getElementById('mstr4');
+              const roll5 = document.getElementById('mstr5'); 
               const Strength = document.getElementById('ss0');              
               const Dexterity = document.getElementById('ss1');
               const Constitution= document.getElementById('ss2');              
@@ -226,43 +231,61 @@
             
 
               let theskills = [];
-                if (Acrobatics.checked = true) {
+                if (Acrobatics.checked === true) {
                     theskills.push('Acrobatics');
-                } else if (Arcana.checked = true) {
+                }  
+                if (Arcana.checked === true) {
                     theskills.push('Arcana');
-                } else if (Animal.checked = true) {
+                }  
+                if (Animal.checked === true) {
                     theskills.push('Animal');
-                } else if (Athetics.checked = true) {
+                }  
+                if (Athetics.checked === true) {
                     theskills.push('Athetics');
-                } else if (Deception.checked = true) {
+                }  
+                if (Deception.checked === true) {
                     theskills.push('Deception'); 
-                } else if (history.checked = true) {
+                }  
+                if (history.checked === true) {
                     theskills.push('history');
-                } else if (Insight.checked = true) {
+                }  
+                if (Insight.checked === true) {
                     theskills.push('Insight');
-                } else if (Intimidation.checked = true) {
+                }  
+                if (Intimidation.checked === true) {
                     theskills.push('Intimidation');
-                } else if (Intelligence.checked = true) {
+                }  
+                if (Intelligence.checked === true) {
                     theskills.push('Intelligence');
-                } else if (Investigation.checked = true) {
+                }  
+                if (Investigation.checked === true) {
                     theskills.push('Investigation');
-                } else if (Medicine.checked = true) {
+                }  
+                if (Medicine.checked === true) {
                     theskills.push('Medicine');
-                } else if (Nature.checked = true) {
+                }  
+                if (Nature.checked === true) {
                     theskills.push('Nature');
-                } else if (Perception.checked = true) {
+                }  
+                if (Perception.checked === true) {
                     theskills.push('Perception');
-                } else if (performance.checked = true) {
+                }  
+                if (Performance.checked === true) {
                     theskills.push('Performance');
-                } else if (Personality.checked = true) {
-                    theskills.push('Personality');
-                } else if (Sleight.checked = true) {
+                }  
+                if (Persuasion.checked === true) {
+                    theskills.push('persuasion');
+                }  
+                if (Sleight.checked === true) {
                     theskills.push('Sleight');
-                } else if (Religion.checked = true) {
+                }  
+                if (Religion.checked === true) {
                     theskills.push('Religion');
-                } else if (Stealth.checked = true) {
+                }  
+                if (Stealth.checked === true) {
                     theskills.push('Stealth');
-                } else if (Survival.checked = true) {
+                }  
+                if (Survival.checked === true) {
                     theskills.push('Survival');
                 }
 
@@ -272,12 +295,12 @@
                   '\r Name: ' + name.value + ' \r\n ' + 
                   'Class: ' + Classes.value + ' \r\n ' +
                   'Health: ' + Health.value + ' \r\n ' + 
-                  value0 + ': ' + Strength.value + ' \r\n ' + 
-                  mstr[1] + ': ' + Dexterity.value + ' \r\n ' + 
-                  mstr[2] + ': ' + Constitution.value + ' \r\n ' + 
-                  mstr[3] + ': ' + Intelligence.value + ' \r\n ' + 
-                  mstr[4] + ': ' + Wisdom.value + ' \r\n ' + 
-                  mstr[5] + ': ' + Charisma.value + ' \r\n ' + 
+                  Strength.value  +': ' + roll0.value + ' \r\n ' + 
+                  Dexterity.value + ': ' + roll1.value + ' \r\n ' + 
+                  Constitution.value + ': ' + roll2.value + ' \r\n ' + 
+                  Intelligence.value + ': ' + roll3.value + ' \r\n ' + 
+                  Wisdom.value + ': ' + roll4.value + ' \r\n ' + 
+                  Charisma.value + ': ' + roll5.value + ' \r\n ' + 
                   'Alignment: ' + alignment.value + ' \r\n ' + 
                   'Personality: ' + Personality.value + ' \r\n ' + 
                   'Ideals: ' + Ideals.value + ' \r\n ' + 
