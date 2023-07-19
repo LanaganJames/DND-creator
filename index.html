@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="dnd.css">
+    <link rel="php" href="insert.php">
     <title>template3</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
         <h1>D&D Character Creator</h1>
      </head>
      <main>
-        <form action='/action_page.php' method="get">
+        <form action='' method="post">
         <div id="form1">
             <label for="class">What is your class</label>
             <select name="classes" id="classes">
@@ -164,7 +165,7 @@
           </div>
           <div>
             <input type="submit">
-            
+
             <input type="button" id="bt" 
                    value="Save data to file" onclick="saveChar()" />
           </div>
