@@ -11,9 +11,10 @@
         <h1>D&D Character Creator</h1>
      </head>
      <main>
-        <form action="">
+        <form action='/action_page.php' method="get">
+        <div id="form1">
             <label for="class">What is your class</label>
-            <select name="class" id="class">
+            <select name="classes" id="classes">
                 <option value="Artificer">Artificer</option>
                 <option value="Barbarian">Barbarian</option>
                 <option value="Bard">Bard</option>
@@ -30,37 +31,153 @@
                 <option value="Warlock">Warlock</option>
                 <option value="Wizard">Wizard</option>
             </select>
-            <label for="health">roll for Health</label>
-            <p>Be wise, You only get 1 reroll</p>
-            <input onclick="healthRoll()" type="button" id="hButton">
-            <p id="roll"></p>
-            <p>SYSTEM</p>
-            <input onclick="systemRolls()" type="button" id="strbutton">
-            <p id="str"></p>
-            <p>strength</p>
-            <select onclick="myFunction0" id="rec_mode1">        
+            <div class="health">
+                <label for="health">Roll for Health</label><br>
+                <input onclick="healthRoll()" type="button" id="hButton">
+                <p id="roll"></p>
+            </div>
+            <div class="systemroll">
+                <label for="health">Roll for System</label><br>
+                <input onclick="systemRolls()" type="button" id="strbutton">
+                <p id="mstr"></p>
+            </div>
+            <div id="master">
+                <p id="mstr0"></p>
+                <select name="system" id="ss0">
+                    <option value="Strength">Strength</option>
+                    <option value="Dexterity">Dexterity</option>
+                    <option value="Constitution">Constitution</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Wisdom">Wisdom</option>
+                    <option value="Charisma">Charisma</option>
+                </select>
+            </div>
+            <div id="master">
+                <p id="mstr1"></p>
+                <select name="system" id="ss1">
+                    <option value="Dexterity">Dexterity</option>
+                    <option value="Constitution">Constitution</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Wisdom">Wisdom</option>
+                    <option value="Charisma">Charisma</option>
+                    <option value="Strength">Strength</option>
+                </select>
+            </div>
+            <div id="master">
+                <p id="mstr2"></p>
+                <select name="system" id="ss2">
+                    <option value="Constitution">Constitution</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Wisdom">Wisdom</option>
+                    <option value="Charisma">Charisma</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Dexterity">Dexterity</option>
+                </select>
+            </div>
+            <div id="master">
+                <p id="mstr3"></p>
+                <select name="system" id="ss3">
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Wisdom">Wisdom</option>
+                    <option value="Charisma">Charisma</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Dexterity">Dexterity</option>
+                    <option value="Constitution">Constitution</option>
+                </select>
+            </div>
+            <div id="master">
+                <p id="mstr4"></p>
+                <select name="system" id="ss4">
+                    <option value="Wisdom">Wisdom</option>
+                    <option value="Charisma">Charisma</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Dexterity">Dexterity</option>
+                    <option value="Constitution">Constitution</option>
+                    <option value="Intelligence">Intelligence</option>
+                </select>
+            </div>
+            <div id="master">
+                <p id="mstr5"></p>
+                <select name="system" id="ss5">
+                    <option value="Charisma">Charisma</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Dexterity">Dexterity</option>
+                    <option value="Constitution">Constitution</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Wisdom">Wisdom</option>
+                </select>
+            </div>
+            </div>
+            <input onclick="webChange()" type="button" class="but1" id="button1">next</input>
+        </div>
+        <div id="form2">
+            <select name="alignment" id="alignment">
+                <option value="Lawful Good">Lawful Good</option>
+                <option value="Neutral Good">Neutral Good</option>
+                <option value="Chaotic Good">Chaotic Good</option>
+                <option value="Lawful Neutral">Lawful Neutral</option>
+                <option value="True Neutral">True Neutral</option>
+                <option value="Chaotic Neutral">Chaotic Neutral</option>
+                <option value="Lawful Evil">Lawful Evil</option>
+                <option value="Neutral Evil">Neutral Evil</option>
+                <option value="Chaotic Evil">Chaotic Evil</option>
             </select>
-            <p>dexterity</p>
-            <select onclick="myFunction1" id="rec_mode2">        
-            </select>
-            <p>constitution</p>
-            <select onclick="myFunction2" id="rec_mode3">        
-            </select>
-            <p>intelligence</p>
-            <select onclick="myFunction3" id="rec_mode4">        
-            </select>
-            <p>wisdom</p> 
-            <select onclick="myFunction4" id="rec_mode5">        
-            </select>
-            <p>charisma</p>
-            <select onclick="myFunction5" id="rec_mode6">        
-            </select>
+            <div class="disc">
+                <textarea id="Personality" placeholder="Personality Traits" rows="5" cols="50" name="text"></textarea>
+                <textarea id="Ideals" placeholder="Ideals" rows="5" cols="50" name="text"></textarea>
+                <textarea id="Bonds" placeholder="Bonds" rows="5" cols="50" name="text"></textarea>
+                <textarea id="Flaws" placeholder="Flaws" rows="5" cols="50" name="text"></textarea>
+                <textarea id="About" placeholder="About" rows="5" cols="50" name="text"></textarea>
+            </div>
+            <input onclick="andPart()" type="button" class="but2" id="button2">next</input>
+        </div>
+        <div id="form3">
+            <h1>Select Any Three Skills</h1>
+            <div id="Skills">
+                <input class="check" type="checkbox" id="Acrobatics" value="Acrobatics">Acrobatics
+                <input class="check" type="checkbox" id="Arcana" value="Arcana">Arcana
+                <input class="check" type="checkbox" id="Animal" value="Animal">Animal
+                <input class="check" type="checkbox" id="Athetics" value="Athetics">Athetics
+                <input class="check" type="checkbox" id="Deception" value="Deception">Deception
+                <input class="check" type="checkbox" id="History" value="History">History
+                <input class="check" type="checkbox" id="Insight" value="Insight">Insight
+                <input class="check" type="checkbox" id="Intimidation" value="Intimidation">Intimidation
+                <input class="check" type="checkbox" id="Investigation" value="Investigation">Investigation
+                <input class="check" type="checkbox" id="Medicine" value="Medicine">Medicine
+                <input class="check" type="checkbox" id="Nature" value="Nature">Nature
+                <input class="check" type="checkbox" id="Perception" value="Perception">Perception
+                <input class="check" type="checkbox" id="Performance" value="Performance">Performance
+                <input class="check" type="checkbox" id="Persuasion" value="Persuasion">Persuasion
+                <input class="check" type="checkbox" id="Sleight" value="Sleight">Sleight
+                <input class="check" type="checkbox" id="Religion" value="Religion">Religion
+                <input class="check" type="checkbox" id="Stealth" value="Stealth">Stealth
+                <input class="check" type="checkbox" id="Survival" value="Survival">Survival
+            </div>
+            <input onclick="graphicAlter()" type="button" class="but3" id="button3">next</input>
+        </div>
+        <div>
+            <input type="text" id="txtName" placeholder="Enter your name" />
+          </div>
+          <div>
+            <textarea id="msg" name="msg" 
+                placeholder="Write some message ..." style="height:100px">     </textarea>
+          </div>
+          <div>
+            <input type="submit">
+            
+            <input type="button" id="bt" 
+                   value="Save data to file" onclick="saveChar()" />
+          </div>
+        </div>
+        
+        <p>
+          You can read the data from the text file. <a href='https://www.encodedna.com/javascript/read-text-file-from-url-in-javascript-using-async-await.htm' target='_blank'>See this post</a>
+        </p>
         </form>
         <script>
             function healthRoll() {
-                let x = Math.floor((Math.random() * 12) + 1);
+                var x = Math.floor((Math.random() * 12) + 1);
                 document.getElementById("roll").innerHTML = x;
-
                 var y = document.getElementById("hButton");
                     if (y.style.display === "none") {
                     y.style.display = "block";
@@ -68,9 +185,218 @@
                     y.style.display = "none";
                 }
             }
-        </script>
-        <script>
-            function systemRolls() {
+            function saveChar() {
+
+              const Classes = document.getElementById('classes');
+              const Health = document.getElementById('roll');
+              const value0 = document.getElementById('mstr0');
+              const Strength = document.getElementById('ss0');              
+              const Dexterity = document.getElementById('ss1');
+              const Constitution= document.getElementById('ss2');              
+              const Intelligence = document.getElementById('ss3');                         
+              const Wisdom = document.getElementById('ss4');
+              const Charisma = document.getElementById('ss5'); 
+              const alignment = document.getElementById('alignment');
+              const Personality = document.getElementById('Personality');
+              const Ideals = document.getElementById('Ideals');
+              const Bonds = document.getElementById('Bonds');
+              const Flaws= document.getElementById('Flaws');
+              const About = document.getElementById('About');
+              const name = document.getElementById('txtName');
+              const Acrobatics = document.getElementById('Acrobatics');
+              const Arcana = document.getElementById ('Arcana');
+              const Animal = document.getElementById('Animal');
+              const Athetics = document.getElementById('Athetics');
+              const Deception = document.getElementById('Deception');
+              const history = document.getElementById('History');
+              const Insight = document.getElementById('Insight');
+              const Intimidation= document.getElementById('Intimidation');
+              const Investigation= document.getElementById('Investigation');
+              const Medicine = document.getElementById('Medicine');
+              const Nature= document.getElementById('Nature');
+              const Perception= document.getElementById('Perception');
+              const Performance = document.getElementById('Performance');
+              const Persuasion= document.getElementById('Persuasion');
+              const Sleight= document.getElementById('Sleight');
+              const Religion= document.getElementById('Religion');
+              const Stealth = document.getElementById('Stealth');
+              const Survival = document.getElementById('Survival');
+              const msg = document.getElementById('msg');
+            
+
+              let theskills = [];
+                if (Acrobatics.checked = true) {
+                    theskills.push('Acrobatics');
+                } else if (Arcana.checked = true) {
+                    theskills.push('Arcana');
+                } else if (Animal.checked = true) {
+                    theskills.push('Animal');
+                } else if (Athetics.checked = true) {
+                    theskills.push('Athetics');
+                } else if (Deception.checked = true) {
+                    theskills.push('Deception'); 
+                } else if (history.checked = true) {
+                    theskills.push('history');
+                } else if (Insight.checked = true) {
+                    theskills.push('Insight');
+                } else if (Intimidation.checked = true) {
+                    theskills.push('Intimidation');
+                } else if (Intelligence.checked = true) {
+                    theskills.push('Intelligence');
+                } else if (Investigation.checked = true) {
+                    theskills.push('Investigation');
+                } else if (Medicine.checked = true) {
+                    theskills.push('Medicine');
+                } else if (Nature.checked = true) {
+                    theskills.push('Nature');
+                } else if (Perception.checked = true) {
+                    theskills.push('Perception');
+                } else if (performance.checked = true) {
+                    theskills.push('Performance');
+                } else if (Personality.checked = true) {
+                    theskills.push('Personality');
+                } else if (Sleight.checked = true) {
+                    theskills.push('Sleight');
+                } else if (Religion.checked = true) {
+                    theskills.push('Religion');
+                } else if (Stealth.checked = true) {
+                    theskills.push('Stealth');
+                } else if (Survival.checked = true) {
+                    theskills.push('Survival');
+                }
+
+        
+              // This variable stores all the data.
+              let data = 
+                  '\r Name: ' + name.value + ' \r\n ' + 
+                  'Class: ' + Classes.value + ' \r\n ' +
+                  'Health: ' + Health.value + ' \r\n ' + 
+                  value0 + ': ' + Strength.value + ' \r\n ' + 
+                  mstr[1] + ': ' + Dexterity.value + ' \r\n ' + 
+                  mstr[2] + ': ' + Constitution.value + ' \r\n ' + 
+                  mstr[3] + ': ' + Intelligence.value + ' \r\n ' + 
+                  mstr[4] + ': ' + Wisdom.value + ' \r\n ' + 
+                  mstr[5] + ': ' + Charisma.value + ' \r\n ' + 
+                  'Alignment: ' + alignment.value + ' \r\n ' + 
+                  'Personality: ' + Personality.value + ' \r\n ' + 
+                  'Ideals: ' + Ideals.value + ' \r\n ' + 
+                  'Bonds: ' + Bonds.value + ' \r\n ' + 
+                  'Flaws: ' + Flaws.value + ' \r\n ' + 
+                  'About: ' + About.value + ' \r\n ' + 
+                  'Skills: ' + theskills + ' \r\n ' +
+                  'Message: ' + msg.value;
+        
+              // Convert the text to BLOB.
+              const textToBLOB = new Blob([data], { type: 'text/plain' });
+              const sFileName = 'formData.txt';	   // The file to save the data.
+        
+              let newLink = document.createElement("a");
+              newLink.download = sFileName;
+        
+              if (window.webkitURL != null) {
+                newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+              }
+              else {
+                newLink.href = window.URL.createObjectURL(textToBLOB);
+                newLink.style.display = "none";
+                document.body.appendChild(newLink);
+              }
+        
+              newLink.click(); 
+            }
+
+                var id = null;
+                function webChange() {
+                    var m = document.getElementById("form2");
+                    if (m.style.display === "none") {
+                    m.style.display = "block";
+                    }else{
+                    m.style.display = "block";
+                    }
+            
+                    var w = document.getElementById("form1");
+                    if (w.style.display === "block") {
+                    w.style.display = "none";
+                    }else{
+                    w.style.display = "none";
+                    }
+            
+                    var a = document.getElementById("form3");
+                    if (a.style.display === "block") {
+                    a.style.display = "none";
+                    }else{
+                    a.style.display = "none";
+                    }
+                }
+
+                function andPart() {
+                    var b = document.getElementById("form3");
+                    if (b.style.display === "none") {
+                    b.style.display = "block";
+                    }else{
+                    b.style.display = "block";
+                    }
+            
+                    var c = document.getElementById("form1");
+                    if (c.style.display === "block") {
+                    c.style.display = "none";
+                    }else{
+                    c.style.display = "none";
+                    }
+            
+                    var d = document.getElementById("form2");
+                    if (d.style.display === "block") {
+                    d.style.display = "none";
+                    }else{
+                    d.style.display = "none";
+                    }
+                }
+
+                function graphicAlter() {
+                    var e = document.getElementById("form1");
+                    if (e.style.display === "none") {
+                    e.style.display = "block";
+                    }else{
+                    e.style.display = "block";
+                    }
+            
+                    var f = document.getElementById("form3");
+                    if (f.style.display === "block") {
+                    f.style.display = "none";
+                    }else{
+                    f.style.display = "none";
+                    }
+            
+                    var g = document.getElementById("form2");
+                    if (g.style.display === "block") {
+                    g.style.display = "none";
+                    }else{
+                    g.style.display = "none";
+                    }
+                }
+
+            function onlyOneCheckBox() {
+                var skills = document.getElementById('Skills').getElementsByTagName("input");
+                
+                //Note #2 Change max limit here as necessary
+                var limit = 3;
+              
+                for (var i = 0; i < skills.length; i++) {
+                    skills[i].onclick = function() {
+                        var checkedcount = 0;
+                            for (var i = 0; i < skills.length; i++) {
+                            checkedcount += (skills[i].checked) ? 1 : 0;
+                        }
+                        if (checkedcount > limit) {
+                            console.log("You can select maximum of " + limit + " checkbox.");
+                            alert("You can select maximum of " + limit + " checkbox.");
+                            this.checked = false;
+                        }
+                    }
+                }
+            }
+
+                function systemRolls() {
                 const mstr = [];
                 for (let i = 0; i < 6; i++) {
                     const substr = [];
@@ -86,7 +412,13 @@
                     e = substr.reduce((a, b) => a + b);
                     mstr.push(e);
                 }
-                document.getElementById("str").innerHTML = mstr;
+                document.getElementById("mstr").innerHTML = mstr;
+                document.getElementById("mstr0").innerHTML = mstr[0];
+                document.getElementById("mstr1").innerHTML = mstr[1];
+                document.getElementById("mstr2").innerHTML = mstr[2];
+                document.getElementById("mstr3").innerHTML = mstr[3];
+                document.getElementById("mstr4").innerHTML = mstr[4];
+                document.getElementById("mstr5").innerHTML = mstr[5];
 
                 var d = document.getElementById("strbutton");
                     if (d.style.display === "none") {
@@ -94,104 +426,10 @@
                     } else {
                     d.style.display = "none";
                 }
-                var myobject1 = {
-                    ValueA : mstr[0],
-                    ValueB : mstr[1],
-                    ValueC : mstr[2],
-                    ValueD : mstr[3],
-                    ValueE : mstr[4],
-                    ValueF : mstr[5]
-                };
-                var select = document.getElementById("rec_mode1");
-                for(index in myobject1) {
-                    select.options[select.options.length] = new Option(myobject1[index], index);
-                }
-
-                function myFunction1() {
-                    var x = document.getElementById("rec_mode1").options[0].disabled = true;
-                }
-
-                var myobject2 = {
-                    ValueA : mstr[0],
-                    ValueB : mstr[1],
-                    ValueC : mstr[2],
-                    ValueD : mstr[3],
-                    ValueE : mstr[4],
-                    ValueF : mstr[5]
-                };
-                var select = document.getElementById("rec_mode2");
-                for(index in myobject2) {
-                    select.options[select.options.length] = new Option(myobject2[index], index);
-                }
-
-                function myFunction2() {
-                    var x = document.getElementById("rec_mode2").options[0].disabled = true;
-                }
-
-                var myobject3 = {
-                    ValueA : mstr[0],
-                    ValueB : mstr[1],
-                    ValueC : mstr[2],
-                    ValueD : mstr[3],
-                    ValueE : mstr[4],
-                    ValueF : mstr[5]
-                };
-                var select = document.getElementById("rec_mode3");
-                for(index in myobject3) {
-                    select.options[select.options.length] = new Option(myobject3[index], index);
-                }
-
-                function myFunction3() {
-                    var x = document.getElementById("rec_mode3").options[3].disabled = true;
-                }
-
-                var myobject4 = {
-                    ValueA : mstr[0],
-                    ValueB : mstr[1],
-                    ValueC : mstr[2],
-                    ValueD : mstr[3],
-                    ValueE : mstr[4],
-                    ValueF : mstr[5]
-                };
-                var select = document.getElementById("rec_mode4");
-                for(index in myobject4) {
-                    select.options[select.options.length] = new Option(myobject4[index], index);
-                }
-
-                function myFunction4() {
-                    var x = document.getElementById("rec_mode4").options[4].disabled = true;
-                }
-
-                var myobject5 = {
-                    ValueA : mstr[0],
-                    ValueB : mstr[1],
-                    ValueC : mstr[2],
-                    ValueD : mstr[3],
-                    ValueE : mstr[4],
-                    ValueF : mstr[5]
-                };
-                var select = document.getElementById("rec_mode5");
-                for(index in myobject5) {
-                    select.options[select.options.length] = new Option(myobject5[index], index);
-                }
-
-                function myFunction5() {
-                    var x = document.getElementById("rec_mode5").options[5].disabled = true;
-                }
-
-                var myobject6 = {
-                    ValueA : mstr[0],
-                    ValueB : mstr[1],
-                    ValueC : mstr[2],
-                    ValueD : mstr[3],
-                    ValueE : mstr[4],
-                    ValueF : mstr[5]
-                };
-                var select = document.getElementById("rec_mode6");
-                for(index in myobject6) {
-                    select.options[select.options.length] = new Option(myobject6[index], index);
-                }
             }
+        </script>
+        <script type="text/javascript">
+            onlyOneCheckBox()
         </script>
      </main>
 </body>

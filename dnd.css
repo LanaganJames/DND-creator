@@ -1,6 +1,76 @@
+html{
+    background-color: black;
+    color: red;
+    font-family: Luminari, fantasy;
+}
 input{
     display: block;
 }
 p{
     display: block;
+}
+#div1{
+    width: 30px;
+    height: 20px;
+    padding-bottom: 10px;
+    border: 1px solid red;
+    background-color: black;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+textarea{
+    background-color: black;
+    color: red;    
+}
+input{
+    background-color: red;
+}
+select{
+    background-color: red;
+}
+.sets{
+    display: flex;
+    flex-direction: row;
+}
+p{
+    margin-top: 0% !important;
+    margin-right: 10px;
+    font-size: 30px;
+}
+#skills{
+    display: grid;
+    grid-template-rows: repeat(18, 20px);
+    grid-template-columns: 5% 20%;
+}
+.health{
+    display: flex;
+    flex-direction: row;
+}
+.systemroll{
+    display: flex;
+    flex-direction: row;
+}
+.disc{
+    display: flex;
+    flex-direction: column;
+}
+#alignment{
+    margin-bottom: 11%;
+}
+#form1{
+    display: block;
+}
+#form2{
+    display: none;
+}
+#form3{
+    display: none;
+}
+#master{
+    display: flex;
+    flex-direction: row;
 }
